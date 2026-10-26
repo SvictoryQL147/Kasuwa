@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+html { -webkit-tap-highlight-color: transparent; }
+body { @apply bg-ink-100 text-ink-900 antialiased; }
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4; }
+  .card { @apply rounded-2xl bg-white shadow-sm ring-1 ring-black/5; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-brand-600 text-white hover:bg-brand-700; }
+  .btn-accent { @apply btn bg-accent-500 text-white hover:bg-accent-600; }
+  .btn-ghost { @apply btn bg-white text-ink-900 ring-1 ring-ink-300 hover:bg-ink-100; }
+  /* 16px on phones stops iOS Safari zooming into fields */
+  .input { @apply w-full rounded-xl border border-ink-300 bg-white px-3 py-2.5 text-base outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100 sm:text-sm; }
+  .check { @apply h-5 w-5 shrink-0 accent-brand-600; }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .label { @apply mb-1 block text-sm font-medium text-ink-700; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold; }
+}

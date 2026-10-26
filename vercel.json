@@ -1,0 +1,4 @@
+{
+  "regions": ["cpt1"],
+  "crons": [{ "path": "/api/cron/expire-teams", "schedule": "0 3 * * *" }]
+}
