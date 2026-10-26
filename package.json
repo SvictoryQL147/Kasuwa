@@ -12,7 +12,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "db:seed": "tsx --env-file=.env src/db/seed.ts",
-    "jobs:expire-teams": "tsx --conditions=react-server --env-file=.env scripts/expire-teams.ts"
+    "jobs:expire-teams": "tsx --conditions=react-server --env-file=.env scripts/expire-teams.ts",
+    "db:photos": "tsx --env-file=.env scripts/add-photos.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.56.0",

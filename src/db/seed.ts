@@ -3,6 +3,7 @@ import { sql } from "drizzle-orm";
 import { Pool } from "pg";
 import bcrypt from "bcryptjs";
 import * as schema from "./schema";
+import { PRODUCT_PHOTOS } from "./product-photos";
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const db = drizzle(pool, { schema });
@@ -145,7 +146,7 @@ async function main() {
         title: p.title,
         slug: slugify(p.title),
         description: p.desc,
-        images: [],
+        images: PRODUCT_PHOTOS[slugify(p.title)] ?? [],
         tags: p.tags,
         price: N(p.price),
         compareAtPrice: p.was ? N(p.was) : null,

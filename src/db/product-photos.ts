@@ -1,0 +1,30 @@
+// Demo product photos: free-to-use images from Unsplash (unsplash.com/license),
+// served from Unsplash's CDN. Real sellers replace these with their own photos.
+const u = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1200&q=80`;
+
+export const PRODUCT_PHOTOS: Record<string, string[]> = {
+  "tecno-spark-30-pro-8gb256gb": [u("1480694313141-fce5e697ee25")],
+  "infinix-hot-50-4gb128gb": [u("1592890288564-76628a30a657")],
+  "samsung-galaxy-a16-6gb128gb": [u("1707438095940-1eee18e85400")],
+  "oraimo-freepods-4-wireless-earbuds": [u("1606220588913-b3aacb4d2f46")],
+  "oraimo-20000mah-power-bank": [u("1760708825913-65a50b3dc39b"), u("1566554738544-d962991c3fee")],
+  "hp-250-g9-core-i5-8gb512gb-ssd": [u("1484788984921-03950022c9ef")],
+  "logitech-m190-wireless-mouse": [u("1527864550417-7fd91fc51a46")],
+  "handmade-leather-mens-loafers": [u("1616406432452-07bc5938759d")],
+  "ankara-print-bucket-hat": [u("1627681828965-048a32cdf16f")],
+  "womens-ankara-wrap-dress": [u("1784160053635-424cf07f567c"), u("1709809081557-78f803ce93a0")],
+  "leather-crossbody-bag": [u("1657603738389-951c374b740c")],
+  "binatone-17l-electric-kettle": [u("1594213114663-d94db9b17125")],
+  "scanfrost-5-speed-blender-15l": [u("1536304447766-da0ed4ce1b73"), u("1654064754916-e3edeb09c042")],
+  "non-stick-pot-set-5-pieces": [u("1556911164-1297abe8527c")],
+  "rechargeable-led-standing-fan-16": [u("1601084195907-44baaa49dabd")],
+  "hisense-43-smart-tv": [u("1584280795027-321f4d68e77b")],
+  "raw-shea-butter-500g": [u("1573812461383-e5f8b759d12e")],
+  "african-black-soap-3-pack": [u("1783773464991-8a6c242a2b18")],
+  "hair-growth-oil-with-chebe-100ml": [u("1792071569385-5d38c88dadcd")],
+  "mama-gold-rice-25kg": [u("1586201375761-83865001e31c")],
+  "kings-vegetable-oil-5l": [u("1768689033119-c3ac1e437d20")],
+  "honeywell-semovita-10kg": [u("1731082300550-8093311708ef")],
+  "swiss-voile-lace-fabric-5-yards": [u("1777566131330-43fd5946c8f8")],
+  "molfix-diapers-size-4-jumbo-68": [u("1584839404042-8bc21d240e91")],
+};

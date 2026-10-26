@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+import Image, { type ImageLoaderProps } from "next/image";
+import { useState } from "react";
 import { CategoryIcon } from "./icon";
 import { cn } from "@/lib/cn";
 
@@ -17,19 +19,21 @@ const ICONS: Record<string, string> = {
   electronics: "Tv", groceries: "ShoppingBasket", baby: "Baby", computing: "Laptop",
 };
 
-/** Real photo when the seller uploaded one, otherwise a branded category tile. */
-export function ProductImage({
-  src, alt, category, className, sizes = "(max-width: 768px) 50vw, 25vw", priority,
-}: {
-  src?: string; alt: string; category: string; className?: string; sizes?: string; priority?: boolean;
-}) {
-  if (src) {
-    return (
-      <div className={cn("relative overflow-hidden bg-ink-100", className)}>
-        <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover" />
-      </div>
-    );
+/** Unsplash/Cloudinary resize on their own CDN, so we don't spend Vercel image quota. */
+function cdnLoader({ src, width, quality }: ImageLoaderProps) {
+  const url = new URL(src);
+  if (url.hostname === "images.unsplash.com") {
+    url.searchParams.set("w", String(width));
+    url.searchParams.set("q", String(quality ?? 70));
+    url.searchParams.set("auto", "format");
+    url.searchParams.set("fit", "crop");
+    return url.toString();
   }
+  return src;
+}
+const hasCdn = (src: string) => /^https:\/\/images\.unsplash\.com\//.test(src);
+
+function Placeholder({ alt, category, className }: { alt: string; category: string; className?: string }) {
   return (
     <div
       className={cn("flex items-center justify-center bg-gradient-to-br", PALETTES[category] ?? PALETTES.electronics, className)}
@@ -37,6 +41,31 @@ export function ProductImage({
       aria-label={alt}
     >
       <CategoryIcon name={ICONS[category] ?? "Tag"} className="h-1/3 w-1/3 opacity-70" />
+    </div>
+  );
+}
+
+/** Real photo when there is one; branded category tile if missing or if the photo fails to load. */
+export function ProductImage({
+  src, alt, category, className, sizes = "(max-width: 768px) 50vw, 20vw", priority,
+}: {
+  src?: string; alt: string; category: string; className?: string; sizes?: string; priority?: boolean;
+}) {
+  const [failed, setFailed] = useState(false);
+  if (!src || failed) return <Placeholder alt={alt} category={category} className={className} />;
+  return (
+    <div className={cn("relative overflow-hidden bg-ink-100", className)}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        priority={priority}
+        quality={70}
+        loader={hasCdn(src) ? cdnLoader : undefined}
+        onError={() => setFailed(true)}
+        className="object-cover"
+      />
     </div>
   );
 }

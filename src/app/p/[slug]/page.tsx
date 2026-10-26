@@ -5,7 +5,7 @@ import { BadgeCheck, Clock, MapPin, RotateCcw, ShieldCheck, Truck, Users, Zap } 
 import { AddToCart } from "@/components/add-to-cart";
 import { MobileBuyBar } from "@/components/mobile-buy-bar";
 import { Countdown } from "@/components/countdown";
-import { ProductImage } from "@/components/product-image";
+import { ProductGallery } from "@/components/product-gallery";
 import { Stars } from "@/components/stars";
 import { soldLabel } from "@/components/product-card";
 import { naira, percentOff } from "@/lib/money";
@@ -51,7 +51,7 @@ export default async function ProductPage({ params }: { params: Params }) {
       </nav>
 
       <div className="grid gap-4 md:grid-cols-2 md:gap-6">
-        <ProductImage src={p.images[0]} alt={p.title} category={p.category.slug} className="card aspect-square w-full" priority sizes="(max-width: 768px) 100vw, 50vw" />
+        <ProductGallery images={p.images} title={p.title} category={p.category.slug} />
 
         <div className="space-y-4">
           <div>
