@@ -16,7 +16,7 @@ export function CartButton() {
       <ShoppingCart className="h-4 w-4" />
       <span className="hidden sm:inline">Cart</span>
       {n > 0 && (
-        <span className="absolute -right-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-accent-500 px-1 text-[11px] font-bold">
+        <span className="absolute -right-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-accent-500 px-1 text-[11px] font-bold text-ink-900">
           {n}
         </span>
       )}

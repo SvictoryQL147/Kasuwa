@@ -5,16 +5,24 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Electric blue: primary actions, links, focus
         brand: {
-          50: "#ecfdf3",
-          100: "#d1fadf",
-          500: "#12b76a",
-          600: "#039855",
-          700: "#027a48",
-          900: "#054f31",
+          50: "#eef3ff",
+          100: "#dce6ff",
+          500: "#3d7bff",
+          600: "#1f5eff", // white text on it: 5.1:1
+          700: "#1747cc",
+          900: "#0b1020", // midnight
         },
-        accent: { 400: "#fdb022", 500: "#f79009", 600: "#dc6803" },
-        ink: { 900: "#101828", 700: "#344054", 500: "#667085", 300: "#d0d5dd", 100: "#f2f4f7" },
+        // Cantaloupe orange: Team-Up, deals, badges. Put midnight text on 400-600, never white.
+        accent: {
+          400: "#ffb97a",
+          500: "#ffa65c", // midnight text on it: 9.8:1
+          600: "#f28e3c", // hover
+          700: "#a8500f", // orange TEXT on white or light orange: 5.5:1
+        },
+        // Midnight black + cool greys
+        ink: { 900: "#0b1020", 700: "#2e3548", 500: "#5f677b", 300: "#cfd4df", 100: "#f3f5f9" },
       },
       fontFamily: { sans: ["var(--font-sans)", "system-ui", "sans-serif"] },
     },

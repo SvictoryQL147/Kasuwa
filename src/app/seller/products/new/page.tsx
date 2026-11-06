@@ -24,7 +24,7 @@ export default async function NewProduct() {
           <label><span className="label">Stock</span><input name="stock" type="number" min={0} defaultValue={10} className="input" required /></label>
         </div>
         <fieldset className="rounded-xl bg-accent-400/10 p-4">
-          <legend className="px-1 text-sm font-semibold text-accent-600">Team-Up price (recommended)</legend>
+          <legend className="px-1 text-sm font-semibold text-accent-700">Team-Up price (recommended)</legend>
           <p className="mb-3 text-xs text-ink-500">Offer a lower price when several people buy together. Shoppers share it on WhatsApp for you.</p>
           <div className="grid grid-cols-2 gap-3">
             <label><span className="label">Team price (₦)</span><input name="teamPrice" type="number" min={1} className="input" /></label>

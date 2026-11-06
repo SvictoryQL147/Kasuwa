@@ -51,7 +51,7 @@ export async function Header() {
           {session?.role === "SELLER" && (
             <Link href="/seller" className="chip shrink-0 bg-ink-900 px-3 py-1.5 text-sm text-white md:hidden"><Store className="h-3.5 w-3.5" /> My store</Link>
           )}
-          <Link href="/search?team=1" className="chip shrink-0 bg-accent-400/20 px-3 py-1.5 text-sm text-accent-600">
+          <Link href="/search?team=1" className="chip shrink-0 bg-accent-400/20 px-3 py-1.5 text-sm text-accent-700">
             Team-Up deals
           </Link>
           {cats.map((c) => (

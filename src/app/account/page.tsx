@@ -36,7 +36,7 @@ export default async function AccountPage() {
             <li key={o.id}>
               <Link href={`/orders/${o.code}`} className="card flex items-center justify-between gap-3 p-4 hover:shadow-md">
                 <div className="min-w-0">
-                  <p className="font-semibold">{o.code} {o.teamId && <span className="chip ml-1 bg-accent-400/20 text-accent-600">Team-Up</span>}</p>
+                  <p className="font-semibold">{o.code} {o.teamId && <span className="chip ml-1 bg-accent-400/20 text-accent-700">Team-Up</span>}</p>
                   <p className="truncate text-sm text-ink-500">{o.items.map((i) => i.title).join(", ")}</p>
                 </div>
                 <div className="shrink-0 text-right">

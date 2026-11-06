@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: { siteName: SITE.name, locale: "en_NG", type: "website" },
 };
 
-export const viewport: Viewport = { themeColor: "#027a48", width: "device-width", initialScale: 1, viewportFit: "cover" };
+export const viewport: Viewport = { themeColor: "#0b1020", width: "device-width", initialScale: 1, viewportFit: "cover" };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const session = await getSession();

@@ -24,7 +24,7 @@ export default async function MockPay({ params, searchParams }: { params: Promis
   return (
     <div className="container-x flex justify-center py-16">
       <form action={pay} className="card w-full max-w-sm space-y-4 p-6 text-center">
-        <p className="chip mx-auto bg-accent-400/20 text-accent-600">TEST MODE: no Paystack keys set</p>
+        <p className="chip mx-auto bg-accent-400/20 text-accent-700">TEST MODE: no Paystack keys set</p>
         <p className="text-sm text-ink-500">Paying for {order.code}</p>
         <p className="text-3xl font-extrabold">{naira(order.total)}</p>
         <button className="btn-primary w-full py-3">Simulate successful payment</button>

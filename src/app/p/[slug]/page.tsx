@@ -85,10 +85,10 @@ export default async function ProductPage({ params }: { params: Params }) {
             <div className="card overflow-hidden ring-2 ring-accent-400">
               <div className="flex items-center justify-between gap-3 bg-accent-400/15 px-4 py-3">
                 <div>
-                  <p className="flex items-center gap-1.5 font-bold text-accent-600"><Users className="h-5 w-5" /> Team-Up price</p>
+                  <p className="flex items-center gap-1.5 font-bold text-accent-700"><Users className="h-5 w-5" /> Team-Up price</p>
                   <p className="text-sm text-ink-700">Save {naira(teamSaving)} when {p.teamSize} people buy within 24 hours</p>
                 </div>
-                <span className="shrink-0 text-xl font-extrabold text-accent-600 sm:text-2xl">{naira(p.teamPrice)}</span>
+                <span className="shrink-0 text-xl font-extrabold text-accent-700 sm:text-2xl">{naira(p.teamPrice)}</span>
               </div>
               <div className="space-y-3 p-4">
                 <Link href={`/checkout?product=${p.id}&team=new`} className="btn-accent w-full py-3 text-base">

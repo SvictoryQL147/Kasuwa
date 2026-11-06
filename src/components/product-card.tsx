@@ -30,7 +30,7 @@ export function ProductCard({ p }: { p: ProductCardData }) {
           {p.compareAtPrice && <span className="text-xs text-ink-500 line-through">{naira(p.compareAtPrice)}</span>}
         </div>
         {p.teamPrice && p.teamSize && (
-          <div className="flex items-center gap-1 rounded-lg bg-accent-400/15 px-2 py-1 text-[11px] font-semibold text-accent-600 sm:text-xs">
+          <div className="flex items-center gap-1 rounded-lg bg-accent-400/15 px-2 py-1 text-[11px] font-semibold text-accent-700 sm:text-xs">
             <Users className="h-3.5 w-3.5" /> {naira(p.teamPrice)} with {p.teamSize} people
           </div>
         )}

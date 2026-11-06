@@ -31,7 +31,7 @@ export default async function Home() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-brand-900 via-brand-700 to-brand-600 text-white">
+      <section className="bg-gradient-to-br from-brand-900 via-brand-900 to-brand-700 text-white">
         <div className="container-x grid gap-6 pb-10 pt-6 md:grid-cols-[1.3fr_1fr] md:gap-8 md:py-14">
           <div>
             <p className="chip bg-white/15 text-white">New · Team-Up group buying</p>

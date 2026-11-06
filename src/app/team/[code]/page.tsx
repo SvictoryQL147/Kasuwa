@@ -30,10 +30,10 @@ export default async function TeamPage({ params }: { params: Params }) {
   return (
     <div className="container-x flex justify-center py-6 sm:py-10">
       <div className="card w-full max-w-lg overflow-hidden">
-        <div className="bg-gradient-to-r from-accent-500 to-accent-600 p-5 text-white">
+        <div className="bg-gradient-to-r from-accent-500 to-accent-400 p-5 text-ink-900">
           <p className="flex items-center gap-2 text-sm font-semibold"><Users className="h-4 w-4" /> {t.leader.name.split(" ")[0]} invited you to a Team-Up</p>
           <p className="mt-1 text-3xl font-extrabold">{naira(t.unitPrice)}</p>
-          <p className="text-sm text-white/90">instead of <span className="line-through">{naira(t.product.price)}</span>, only when {t.size} people join</p>
+          <p className="text-sm text-ink-900/80">instead of <span className="line-through">{naira(t.product.price)}</span>, only when {t.size} people join</p>
         </div>
         <div className="space-y-5 p-5">
           <Link href={`/p/${t.product.slug}`} className="flex items-center gap-3">

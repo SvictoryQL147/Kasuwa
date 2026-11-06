@@ -76,7 +76,7 @@ export default async function SellerDashboard() {
             {recent.map((o) => (
               <li key={o.code + o.title} className="space-y-2 p-4 text-sm">
                 <div className="flex items-center justify-between gap-2">
-                  <p className="font-semibold">{o.code}{o.isTeam && <span className="chip ml-1 bg-accent-400/20 text-accent-600">Team</span>}</p>
+                  <p className="font-semibold">{o.code}{o.isTeam && <span className="chip ml-1 bg-accent-400/20 text-accent-700">Team</span>}</p>
                   <span className="chip shrink-0 bg-ink-100 text-ink-700">{STATUS_LABEL[o.status]}</span>
                 </div>
                 <p>{o.quantity} × {o.title}</p>
@@ -102,7 +102,7 @@ export default async function SellerDashboard() {
               <tbody>
                 {recent.map((o) => (
                   <tr key={o.code + o.title} className="border-t">
-                    <td className="p-3 font-medium">{o.code}{o.isTeam && <span className="chip ml-1 bg-accent-400/20 text-accent-600">Team</span>}</td>
+                    <td className="p-3 font-medium">{o.code}{o.isTeam && <span className="chip ml-1 bg-accent-400/20 text-accent-700">Team</span>}</td>
                     <td className="p-3">{o.quantity} × {o.title}</td>
                     <td className="p-3">{o.city}, {o.state} · {o.deliveryMethod.toLowerCase()}</td>
                     <td className="p-3">{naira(o.lineTotal)}</td>
@@ -133,7 +133,7 @@ export default async function SellerDashboard() {
               <Link href={`/p/${p.slug}`} className="font-medium hover:text-brand-700">{p.title}</Link>
               <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-ink-500">
                 <span className="font-semibold text-ink-900">{naira(p.price)}</span>
-                {p.teamPrice && <span className="text-accent-600">Team {naira(p.teamPrice)} × {p.teamSize}</span>}
+                {p.teamPrice && <span className="text-accent-700">Team {naira(p.teamPrice)} × {p.teamSize}</span>}
                 <span className={p.stock < 10 ? "font-semibold text-red-600" : ""}>Stock {p.stock}</span>
                 <span>{p.soldCount.toLocaleString()} sold</span>
               </div>

@@ -94,7 +94,7 @@ export function Assistant() {
                     <p className="truncate font-medium">{p.title}</p>
                     <p className="text-xs">
                       <span className="font-bold">{naira(p.price)}</span>
-                      {p.teamPrice && <span className="ml-2 inline-flex items-center gap-0.5 text-accent-600"><Users className="h-3 w-3" />{naira(p.teamPrice)}</span>}
+                      {p.teamPrice && <span className="ml-2 inline-flex items-center gap-0.5 text-accent-700"><Users className="h-3 w-3" />{naira(p.teamPrice)}</span>}
                       {p.expressEligible && <Zap className="ml-1 inline h-3 w-3 text-brand-600" />}
                     </p>
                   </div>

@@ -44,7 +44,7 @@ export function BottomNav({ signedIn }: { signedIn: boolean }) {
           <span className="relative">
             <ShoppingCart className="h-5 w-5" />
             {n > 0 && (
-              <span className="absolute -right-2.5 -top-1.5 grid h-4 min-w-4 place-items-center rounded-full bg-accent-500 px-1 text-[10px] font-bold text-white">{n}</span>
+              <span className="absolute -right-2.5 -top-1.5 grid h-4 min-w-4 place-items-center rounded-full bg-accent-500 px-1 text-[10px] font-bold text-ink-900">{n}</span>
             )}
           </span>
           Cart

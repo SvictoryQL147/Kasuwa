@@ -57,7 +57,7 @@ export default async function OrderPage({ params, searchParams }: Props) {
       {team && (
         <section className="card overflow-hidden ring-2 ring-accent-400">
           <div className="bg-accent-400/15 p-4">
-            <p className="flex items-center gap-2 font-bold text-accent-600"><Users className="h-5 w-5" /> Team-Up · {paidMembers.length}/{team.size} joined</p>
+            <p className="flex items-center gap-2 font-bold text-accent-700"><Users className="h-5 w-5" /> Team-Up · {paidMembers.length}/{team.size} joined</p>
             {team.status === "OPEN" && (
               <p className="mt-1 flex items-center gap-1 text-sm"><Clock className="h-4 w-4" /> <Countdown to={team.expiresAt.toISOString()} /> left to fill</p>
             )}
